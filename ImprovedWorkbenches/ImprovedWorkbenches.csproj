@@ -1,0 +1,155 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{85A03DEE-B0F7-46B8-8200-68FA00D607C3}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ImprovedWorkbenches</RootNamespace>
+    <AssemblyName>ImprovedWorkbenches</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\1.3\Assemblies\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\2009463077\Current\Assemblies\0Harmony.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\Assembly-CSharp.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="HugsLib">
+      <HintPath>..\..\..\..\..\..\workshop\content\294100\818773962\v1.3\Assemblies\HugsLib.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+    <Reference Include="UnityEngine, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.CoreModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="UnityEngine.IMGUIModule">
+      <HintPath>..\..\..\..\RimWorldWin64_Data\Managed\UnityEngine.IMGUIModule.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Custom Names\Dialog_RenameBill.cs" />
+    <Compile Include="Custom Output Filter\Dialog_OutputFilter.cs" />
+    <Compile Include="Detours\BillRepeatModeUtility_MakeConfigFloatMenu_Detour.cs" />
+    <Compile Include="Detours\BillConfig_DoWindowContents_Patch.cs" />
+    <Compile Include="CopyPasteLink\BillCopyPaste.cs" />
+    <Compile Include="Detours\BillStack_Delete_Detour.cs" />
+    <Compile Include="Detours\BillUtility_MakeNewBill_Detour.cs" />
+    <Compile Include="Detours\Bill_DoInterface_Detour.cs" />
+    <Compile Include="Detours\Bill_LabelCap_Detour.cs" />
+    <Compile Include="Detours\Bill_Production_DoConfigInterface_Detour.cs" />
+    <Compile Include="Detours\Bill_Production_RepeatInfoText_Detour.cs" />
+    <Compile Include="Detours\Building_Destroy_Detour.cs" />
+    <Compile Include="Detours\Pawn_Spawn_Detour.cs" />
+    <Compile Include="Detours\Widgets_ButtonImage_Detour.cs" />
+    <Compile Include="Filtering\PawnOriginalMapSaver.cs" />
+    <Compile Include="Custom Storage\ExtendedBillData.cs" />
+    <Compile Include="Custom Storage\ExtendedBillDataStorage.cs" />
+    <Compile Include="Detours\RecipeWorkerCounter_CountProducts_Detour.cs" />
+    <Compile Include="Detours\BillStack_DoListing_Detour.cs" />
+    <Compile Include="Detours\ITab_Bills_TabUpdate_Detour.cs" />
+    <Compile Include="CopyPasteLink\LinkedBillsSet.cs" />
+    <Compile Include="Detours\Selector_Select_Detour.cs" />
+    <Compile Include="Main.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="..\..\mod-structure\About\About.xml">
+      <Link>mod-structure\About\About.xml</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\About\Preview.png">
+      <Link>mod-structure\About\Preview.png</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\About\PublishedFileId.txt">
+      <Link>mod-structure\About\PublishedFileId.txt</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\About\Version.xml">
+      <Link>mod-structure\About\Version.xml</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Defs\UpdateFeatureDefs\UpdateFeatureDefs.xml">
+      <Link>mod-structure\Defs\UpdateFeatureDefs\UpdateFeatureDefs.xml</Link>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="..\..\mod-structure\Languages\ChineseSimplified\DefInjected\BillRepeatModeDef\BillRepeatModeDefs.xml">
+      <Link>mod-structure\Languages\ChineseSimplified\DefInjected\BillRepeatModeDef\BillRepeatModeDefs.xml</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Languages\ChineseSimplified\Keyed\IW_LanguageData.xml">
+      <Link>mod-structure\Languages\ChineseSimplified\Keyed\IW_LanguageData.xml</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Languages\English\DefInjected\BillRepeatModeDef\BillRepeatModeDefs.xml">
+      <Link>mod-structure\Languages\English\DefInjected\BillRepeatModeDef\BillRepeatModeDefs.xml</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Languages\English\Keyed\IW_LanguageData.xml">
+      <Link>mod-structure\Languages\English\Keyed\IW_LanguageData.xml</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Languages\Japanese\DefInjected\HugsLib.UpdateFeatureDef\UpdateFeatures.xml">
+      <Link>mod-structure\Languages\Japanese\DefInjected\HugsLib.UpdateFeatureDef\UpdateFeatures.xml</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Languages\Japanese\Keyed\IW_LanguageData.xml">
+      <Link>mod-structure\Languages\Japanese\Keyed\IW_LanguageData.xml</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Languages\Russian\Keyed\IW_LanguageData.xml">
+      <Link>mod-structure\Languages\Russian\Keyed\IW_LanguageData.xml</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Patches\ImprovedWorkbenches.xml">
+      <Link>mod-structure\Patches\ImprovedWorkbenches.xml</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Textures\BestStockpile.png">
+      <Link>mod-structure\Textures\BestStockpile.png</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Textures\BreakLink.png">
+      <Link>mod-structure\Textures\BreakLink.png</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Textures\DropOnFloor.png">
+      <Link>mod-structure\Textures\DropOnFloor.png</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Textures\LeftArrow.png">
+      <Link>mod-structure\Textures\LeftArrow.png</Link>
+    </Content>
+    <Content Include="..\..\mod-structure\Textures\RightArrow.png">
+      <Link>mod-structure\Textures\RightArrow.png</Link>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+</Project>
